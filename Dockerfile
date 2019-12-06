@@ -9,14 +9,14 @@ RUN rm -rf /tmp/src/.git* && \
     chgrp -R 0 /tmp/src && \
     chmod -R g+w /tmp/src && \
     rm -rf /tmp/scripts && \
-    mv /tmp/src/.s2i/bin /tmp/scripts && \
-    pip install -r /tmp/src/requirements.txt
+    mv /tmp/src/.s2i/bin /tmp/scripts
 
 
 ENV XDG_CACHE_HOME=/opt/app-root/src/.cache
 
 USER 1001
 
-RUN /tmp/scripts/assemble
+RUN pip install -r /tmp/src/requirements.txt && \
+    /tmp/scripts/assemble
 
 CMD [ "/opt/app-root/builder/run" ]
