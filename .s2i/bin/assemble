@@ -35,8 +35,6 @@ cd $HOME
 
 rm -rf /tmp/facets
 
-pip install -r /tmp/src/requirements.txt
-
 # Import matplotlib the first time to build the font cache.
 
 MPLBACKEND=Agg python -c "import matplotlib.pyplot"

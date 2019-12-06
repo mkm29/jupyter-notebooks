@@ -16,6 +16,7 @@ ENV XDG_CACHE_HOME=/opt/app-root/src/.cache
 
 USER 1001
 
-RUN  /tmp/scripts/assemble
+RUN  pip install -r /tmp/src/requirements.txt && \
+    /tmp/scripts/assemble
 
 CMD [ "/opt/app-root/builder/run" ]
