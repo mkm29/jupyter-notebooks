@@ -12,9 +12,9 @@ Based on this [article](https://github.com/jupyter-on-openshift/jupyter-notebook
   * oc set env bc/spathe-notebook JUPYTER_ENABLE_LAB=true
   * oc start-build bc/spathe-notebook
 4. Create app
-  * oc new-app s2i-minimal-notebook:3.6 --name spathe-notebook
+  * oc new-app s2i-minimal-notebook:3.6 --name spathe-notebook --allow-missing-imagestream-tags
 5. Expose  
   * oc expose svc/spathe-notebook
-5. Set Environment Variables  
+6. Set Environment Variables  
   * oc set env dc/spathe-notebook JUPYTER_NOTEBOOK_PASSWORD=spathe  
   * oc set env dc/spathe-notebook JUPYTER_NOTEBOOK_INTERFACE=lab  
