@@ -9,12 +9,7 @@ RUN rm -rf /tmp/src/.git* && \
     chgrp -R 0 /tmp/src && \
     chmod -R g+w /tmp/src && \
     rm -rf /tmp/scripts && \
-    mv /tmp/src/.s2i/bin /tmp/scripts && \
-    jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager@^1.0.1 --no-build && \
-    jupyter labextension install jupyterlab-dash@0.1.0-alpha.3 --no-build && \
-    jupyter labextension install jupyterlab_bokeh@1.0.0 --no-build && \
-    jupyter lab build
+    mv /tmp/src/.s2i/bin /tmp/scripts
 
 
 ENV XDG_CACHE_HOME=/opt/app-root/src/.cache
