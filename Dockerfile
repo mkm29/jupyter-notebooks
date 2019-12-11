@@ -1,4 +1,5 @@
-FROM quay.io/jupyteronopenshift/s2i-minimal-notebook-py36:2.5.1
+#FROM quay.io/jupyteronopenshift/s2i-minimal-notebook-py36:2.5.1
+FROM quay.agilesof.com/j6tspathe/coop:datascience
 
 USER root
 
