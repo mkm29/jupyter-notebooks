@@ -20,7 +20,6 @@ vincent==0.4.*
 xlrd==1.2.*
 xlwt==1.3.0
 reportlab==3.5.32
-pandoc
 # deep learning frameworks
 torch
 torchvision

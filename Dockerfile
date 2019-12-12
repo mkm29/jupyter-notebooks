@@ -7,8 +7,9 @@ COPY . /tmp/src
 
 RUN yum -y install texlive && \
     yum -y install git && \
-    yum install -y pandoc && \
     cd /tmp/src && \
+    wget https://github.com/jgm/pandoc/releases/download/2.8.1/pandoc-2.8.1-linux-amd64.tar.gz && \
+    tar -xvzf pandoc-2.8.1-linux-amd64.tar.gz --strip-components 1 -C /usr/local/ && \
     git clone https://github.com/lckr/jupyterlab-variableInspector && \
     cd jupyterlab-variableInspector && \
     npm install %% \
