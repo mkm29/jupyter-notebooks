@@ -8,7 +8,9 @@ COPY . /tmp/src
 RUN yum -y install texlive && \
     yum -y install git && \
     yum install -y pandoc && \
-    cd /tmp/src/jupyterlab-variableInspector && \
+    cd /tmp/src && \
+    git clone https://github.com/lckr/jupyterlab-variableInspector && \
+    cd jupyterlab-variableInspector && \
     npm install %% \
     npm run build && \
     chown -R 1001 /tmp/src && \
