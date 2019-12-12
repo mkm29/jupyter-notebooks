@@ -11,8 +11,13 @@ ARG TEST_ONLY_BUILD
 
 USER root
 
+
+COPY . /tmp/src
+
 # R pre-requisites
 RUN apt-get update && \
+    apt-get install -y texlive && \
+    apt-get install -y git && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \
@@ -85,3 +90,11 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     chmod -R go+rx $CONDA_DIR/share/jupyter && \
     rm -rf $HOME/.local && \
     fix-permissions $JULIA_PKGDIR $CONDA_DIR/share/jupyter
+
+RUN pip install -r /tmp/src/requirements.txt && \
+    rm -rf requirements.txt && \
+    rm -rf Dockerfile && \
+    rm -rf Dockerfile2 && \
+    /tmp/scripts/assemble
+
+CMD [ "/opt/app-root/builder/run" ]
