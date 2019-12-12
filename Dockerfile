@@ -9,7 +9,8 @@ RUN yum -y install texlive && \
     yum -y install git && \
     cd /tmp/src && \
     wget https://github.com/jgm/pandoc/releases/download/2.8.1/pandoc-2.8.1-linux-amd64.tar.gz && \
-    tar -xvzf pandoc-2.8.1-linux-amd64.tar.gz --strip-components 1 -C /usr/local/ && \
+    tar -xvzf pandoc-2.8.1-linux-amd64.tar.gz && \
+    cd pandoc-2.8.1/bin && mv pandoc /usr/bin && \
     git clone https://github.com/lckr/jupyterlab-variableInspector && \
     cd jupyterlab-variableInspector && \
     npm install %% \
@@ -27,6 +28,11 @@ ENV XDG_CACHE_HOME=/opt/app-root/src/.cache
 USER 1001
 
 RUN  pip install -r /tmp/src/requirements.txt && \
+    cd /opt/app-root/ && \
+    git clone https://github.com/jakevdp/PythonDataScienceHandbook.git && \
+    cd PythonDataScienceHandbook && \
+    mv notebooks ../ && \
+    cd ../ && rm -rf PythonDataScienceHandbook && \
     /tmp/scripts/assemble
 
 CMD [ "/opt/app-root/builder/run" ]
