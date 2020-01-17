@@ -21,3 +21,9 @@ Based on this [article](https://github.com/jupyter-on-openshift/jupyter-notebook
 6. Set Environment Variables  
   * oc set env dc/spathe-notebook-app JUPYTER_NOTEBOOK_PASSWORD=spathe  
   * oc set env dc/spathe-notebook-app JUPYTER_NOTEBOOK_INTERFACE=lab  
+7. Enable Jupyter extensions in the s2i assemble script:  
+  * jupyter labextension install @jupyter-widgets/jupyterlab-manager@^1.0.1 --no-build
+  * jupyter labextension install jupyterlab-dash@0.1.0-alpha.3 --no-build
+  * jupyter labextension install jupyterlab_bokeh@1.0.0 --no-build
+  * jupyter labextension install @lckr/jupyterlab_variableinspector --no-build
+  * jupyter lab build
