@@ -20,9 +20,9 @@ jupyter labextension install jupyterlab-dash --no-build
 jupyter labextension install @lckr/jupyterlab_variableinspector --no-build
 # jupyter labextension install @krassowski/jupyterlab-lsp --no-build
 # jupyter labextension install @ijmbarr/jupyterlab_spellchecker --no-build
-# jupyter labextension install jupyterlab-drawio --no-build
-# jupyter labextension install @jupyterlab/toc --no-build
-# jupyter labextension install @ryantam626/jupyterlab_code_formatter --no-build
+jupyter labextension install jupyterlab-drawio --no-build
+jupyter labextension install @jupyterlab/toc --no-build
+jupyter labextension install @ryantam626/jupyterlab_code_formatter --no-build
 jupyter labextension install @oriolmirosa/jupyterlab_materialdarker --no-build
 
 # jupyter serverextension enable --py jupyterlab_code_formatter
