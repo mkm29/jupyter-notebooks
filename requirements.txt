@@ -1,7 +1,7 @@
 ### scipy-notebook
 jupyterlab==2.1.*
 beautifulsoup4==4.8.*
-bokeh==2.1.*
+bokeh==2.0.0
 cython==0.29.*
 ipywidgets==7.5.*
 matplotlib==3.1.*
