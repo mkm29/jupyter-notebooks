@@ -27,7 +27,8 @@ ENV XDG_CACHE_HOME=/opt/app-root/src/.cache
 
 USER 1001
 
-RUN  pip install -r /tmp/src/requirements.txt && \
+RUN pip install -U jupyterlab && \
+    pip install -r /tmp/src/requirements.txt && \
     cd /opt/app-root/ && \
     git clone https://github.com/jakevdp/PythonDataScienceHandbook.git && \
     cd PythonDataScienceHandbook && \
