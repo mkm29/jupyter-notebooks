@@ -19,7 +19,7 @@ protobuf==3.12.*
 #vincent==0.4.*
 xlrd==1.2.*
 xlwt==1.3.0
-reportlab==3.5.32
+reportlab==3.6.13
 #opencv-python==4.2.*
 #python-language-server[all]==0.34.*
 #jupyter-lsp==0.8.*
